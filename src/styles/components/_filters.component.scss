@@ -79,3 +79,24 @@
   @include flex-row-center();
   cursor: pointer;
 }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .filters__pages {
+    display: none;
+  }
+  .filters__input-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+  .filters__all {
+    display: none;
+  }
+  .filters__input-wrapper {
+    margin: 0;
+  }
+}

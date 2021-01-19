@@ -12,6 +12,7 @@ export class RoleService {
   constructor(private http: HttpClient) {
   }
 
+
   getRoles(): Observable<{ roles: RoleModel[] }> {
     const API_URL = `${BASE_URL}${ROLE}`;
     return this.http.get<{ roles: RoleModel[] }>(API_URL, {responseType: 'json'});

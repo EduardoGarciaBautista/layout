@@ -5,12 +5,14 @@
 
 .users-list__card {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
   grid-template-rows: auto;
   padding: 0 39px;
   max-height: 85%;
   overflow: hidden;
   overflow-y: auto;
+  gap: 24px;
 
 }
 

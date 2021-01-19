@@ -3,11 +3,13 @@
   min-height: 100vh;
   background-color: $color-F9F9F9;
   display: grid;
-  grid-template-columns: 256px 1fr;
+  grid-template-columns: minmax(100px, 256px) 1fr;
   grid-template-rows: 64px 1fr;
   grid-template-areas:
   "header header"
   "aside main";
+  transition: 300ms;
+  border: 2 px solid $color-F9F9F9 ;
 }
 
 .header {
@@ -26,4 +28,14 @@
   grid-area: main;
   padding: 37px 40px;
 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .layout {
+    max-width: 100vw;
+  }
+  .main {
+    padding: 10px;
+  }
 }
