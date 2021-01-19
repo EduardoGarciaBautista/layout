@@ -3,6 +3,10 @@
 ANGULAR VERSION: 11.0.4
 NODE VERSION: 12.19.0
 
+To run compodoc RUN: `npm run compodoc` 
+
+To serve file of compodoc RUN:
+`compodoc -s`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
