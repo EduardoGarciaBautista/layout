@@ -1,0 +1,57 @@
+<div class="user-form" *ngIf="form">
+    <span class="user-form__title">{{title}}</span>
+
+    <span class="user-form__label">
+            Foto de perfil
+    </span>
+
+    <div class="user-form__photo">
+        <div class="photo-wrapper">
+            <img class="photo-wrapper__user-photo" [src]="form.controls.picture.value ||'./assets/icons/user.svg'" alt="">
+        </div>
+        <div class="photo-action">
+            <span class="photo-action__label">JPG, PNG   |   Tamaño mínimo de 300px × 300px</span>
+            <label class="photo-action__upload">
+                <input type="file" (change)="getPhoto($event)">
+                Subir foto
+            </label>
+        </div>
+    </div>
+
+    <form action="" class="form" [formGroup]="form" *ngIf="form" (ngSubmit)="onSubmit($event)">
+        <span class="form__title">
+            Información básica
+        </span>
+
+        <div class="row">
+            <input class="form__input" type="text" placeholder="Nombre" formControlName="name">
+            <input class="form__input" type="text" placeholder="Apellido paterno" formControlName="fathersLastName">
+        </div>
+        <div class="row">
+            <input class="form__input" type="text" placeholder="Apellido materno" formControlName="mothersLastName">
+            <input class="form__input" type="text" placeholder="Correo electrónico" formControlName="email">
+        </div>
+
+        <div class="row">
+            <div class="form-drop-down">
+                <app-drop-down [data]="roleList" [initialState]="user?.roleId || null"
+                               (onSelectedChange)="roleChange($event)"></app-drop-down>
+            </div>
+            <div class="form-drop-switch">
+                <span class="form-drop-switch__active">Inactivo</span>
+                <app-switch (active)="isActive($event)" [isActive]="form.controls.active.value"></app-switch>
+                <span class="form-drop-switch__inactive">Activo</span>
+            </div>
+        </div>
+
+        <div class="form__actions">
+            <button class="form__actions__cancel" type="button" (click)="close()">
+                Cancelar
+            </button>
+
+            <button class="form__actions__save" type="submit">
+                Guardar usuario
+            </button>
+        </div>
+    </form>
+</div>

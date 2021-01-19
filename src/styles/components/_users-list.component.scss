@@ -1,0 +1,21 @@
+.users-list {
+  @include card-design(804);
+
+}
+
+.users-list__card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  padding: 0 39px;
+  max-height: 85%;
+  overflow: hidden;
+  overflow-y: auto;
+
+}
+
+.user-list__paginator {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}

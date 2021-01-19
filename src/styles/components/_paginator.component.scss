@@ -1,0 +1,35 @@
+.paginator {
+  height: 40px;
+  @include flex-row();
+  align-items: center;
+  justify-content: center;
+}
+
+.paginator__pages {
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  @include flex-row-center();
+  background-color: $color-677FAC;
+  color: $color-FFFFFF;
+}
+
+.actual__page {
+  color: $color-969696;
+  background-color: transparent;
+}
+
+.paginator__before, .paginator__after {
+  height: 40px;
+  color: $color-FA6A00;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.paginator__before {
+  margin-right: 30px;
+}
+
+.paginator__after {
+  margin-left: 30px;
+}

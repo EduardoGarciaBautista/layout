@@ -1,0 +1,29 @@
+<div class="card" *ngIf="user">
+    <img class="card__icon" src="./assets/icons/points.svg" alt="user icon">
+    <div class="card__header">
+        <img class="card__header--image" [src]="user.picture" alt="user profile image">
+    </div>
+    <div class="card__body">
+        <span class="card__body--username">
+            {{user.name}}
+        </span>
+
+        <span class="card__body--email">
+            {{user.email}}
+        </span>
+
+        <span class="card__body--job">
+            {{user.roleId | role: roleList}}
+        </span>
+    </div>
+
+    <div class="card__actions">
+        <div class="actions__container">
+            <app-switch [isActive]="user.active" (active)="onChangeStatusCard($event)"></app-switch>
+            <div class="actions__container--buttons">
+                <img src="./assets/icons/square.svg" alt="edit icon" (click)="edit(user)">
+                <img src="./assets/icons/trash.svg" alt="trash icon" (click)="delete(user.email)">
+            </div>
+        </div>
+    </div>
+</div>

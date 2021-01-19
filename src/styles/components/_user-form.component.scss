@@ -1,0 +1,153 @@
+.user-form {
+  width: 100%;
+  padding: 0 56px;
+  @include flex-column();
+}
+
+.user-form__title {
+  color: $color-121A32;
+  font-size: 2rem;
+  margin-top: 42px;
+  margin-bottom: 33px;
+}
+
+.user-form__label {
+  font-size: 1.6rem;
+  color: $color-121A32;
+}
+
+.user-form__photo {
+  width: 100%;
+  height: 127px;
+  margin-top: 27px;
+  @include flex-row();
+  align-items: center;
+}
+
+.photo-wrapper {
+  height: 127px;
+  width: 127px;
+  border-radius: 50%;
+  background-color: $color-F4F4F4;
+  border: 1px solid $color-DFDFDF;
+  @include flex-row-center();
+  overflow: hidden;
+}
+
+.photo-wrapper__user-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.photo-action {
+  width: 309px;
+  height: 79px;
+  margin-left: 35px;
+  @include flex-column();
+  justify-content: space-between;
+}
+
+.photo-action__label {
+  color: $color-5F5F5F;
+}
+
+
+.photo-action__upload {
+  width: 104px;
+  height: 38px;
+  background-color: $color-FA6A00;
+  color: $color-FFFFFF;
+  position: relative;
+  cursor: pointer;
+  @include flex-row-center();
+  input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.form {
+  margin-top: 36px;
+  width: 100%;
+  @include flex-column();
+}
+
+.form__title {
+  color: $color-111835;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+.row {
+  @include flex-row();
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.row input:nth-child(1) {
+  margin-right: 33px;
+}
+
+.form__input {
+  min-width: 200px;
+  box-sizing: border-box;
+  background-color: $color-F9F9F9;
+  width: 244px;
+  height: 48px;
+  border: 1px solid $color-E9E9E9;
+  color: $color-969696;
+}
+
+.form-drop-switch, .form-drop-down {
+  min-width: 200px;
+  width: 244px;
+  height: 48px;
+}
+
+.form-drop-down {
+  margin-right: 33px;
+}
+
+.form-drop-switch {
+  @include flex-row-center();
+}
+
+.form-drop-switch__active {
+  margin-right: 15px;
+}
+
+.form-drop-switch__inactive {
+  margin-left: 15px;
+}
+
+.form__actions {
+  width: 100%;
+  margin-top: 39px;
+  @include flex-row();
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.form__actions__cancel {
+  width: 140px;
+  height: 40px;
+  background-color: transparent;
+  color: $color-FA6A00;
+  margin-right: 21px;
+  cursor: pointer;
+}
+
+.form__actions__save {
+  width: 165px;
+  height: 48px;
+  background-color: $color-FA6A00;
+  cursor: pointer;
+  color: $color-FFFFFF;
+}

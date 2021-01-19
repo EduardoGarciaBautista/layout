@@ -1,0 +1,30 @@
+.switch {
+  width: 34px;
+  height: 16px;
+  border-radius: 100px;
+  background-color: $color-E3E3E3;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch__toggle {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: $color-FFFFFF;
+  border: 1px solid $color-DFDFDF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.switch-active {
+  background-color: $color-677FAC;
+}
+
+.toggle_active {
+  right: 0;
+}
+
+

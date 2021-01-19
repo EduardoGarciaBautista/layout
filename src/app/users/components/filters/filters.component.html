@@ -1,0 +1,28 @@
+<div class="filters">
+    <div class="filters__input-wrapper">
+        <input
+                class="filters__input-wrapper--search"
+                type="text" placeholder="Búsqueda"
+                [(ngModel)]="filters.query"
+                (ngModelChange)="queryChange($event)">
+    </div>
+    <div class="filters__pages">
+        <app-drop-down [data]="DROP1_DATA" (onSelectedChange)="onChangeFilter($event)"></app-drop-down>
+    </div>
+
+    <div class="filters__order">
+        <app-drop-down [data]="DROP2_DATA" (onSelectedChange)="onChangeFilter($event)"></app-drop-down>
+    </div>
+
+    <div class="filters__all">
+        <app-drop-down [data]="DROP3_DATA" (onSelectedChange)="onChangeFilter($event)"></app-drop-down>
+    </div>
+
+    <div class="filters__list" (click)="changeViewType(VIEW_TYPE_TABLE)">
+        <img class="filters__list--button" src="./assets/icons/list.svg" alt="filter list">
+    </div>
+
+    <div class="filters__cards" (click)="changeViewType(VIEW_TYPE_CARD)">
+        <img class="filters__list--button" src="./assets/icons/square.svg" alt="filter list">
+    </div>
+</div>

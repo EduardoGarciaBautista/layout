@@ -1,0 +1,46 @@
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-row-center() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin card-design($h) {
+  background-color: $color-FFFFFF;
+  border: 1px solid $color-E9E9E9;
+  height: #{$h}px;
+  width: 100%;
+}
+
+@mixin drop-down-design() {
+  @include flex-row-center();
+  height: 100%;
+  background-color: $color-F9F9F9;
+  border: 1px solid $color-E9E9E9;
+  position: relative;
+  justify-content: flex-start;
+  cursor: pointer;
+  &:before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-image: url(#{$assetPath}arrow.svg);
+    background-position: center;
+    position: absolute;
+    right: 10%;
+  }
+  & > span {
+    margin-left: 19px;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="drop-down" (click)="show = !show">
+
+    <span class="filters__order--label" *ngIf="selected">{{selected.label}} </span>
+    <span class="filters__order--label" *ngIf="!selected">Vacio</span>
+
+    <div class="drop-down__items" [class.show-items]="show">
+        <span class="drop-down__items--label" *ngFor="let item of data" (click)="setSelected($event,item)">
+            {{item.label}}
+        </span>
+    </div>
+</div>

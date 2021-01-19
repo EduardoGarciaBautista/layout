@@ -1,0 +1,64 @@
+.user-header {
+  @include card-design(128);
+  margin-bottom: 20px;
+  @include flex-row();
+}
+
+.user-header__title, .user-header__actions {
+  width: 50%;
+}
+
+.user-header__title {
+  @include flex-column();
+  padding-left: 40px;
+  justify-content: center;
+}
+
+.user-header__title--principal {
+  font-size: 2rem;
+  color: $color-131B31;
+  margin-bottom: 16px;
+}
+
+.user-header__title--subtitle {
+
+  color: $color-969696;
+}
+
+.user-header__actions {
+  @include flex-row();
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-header__actions--preview, .user-header__actions--add {
+  height: 48px;
+  border-right: 2px;
+  cursor: pointer;
+
+  @include flex-row-center();
+
+  img {
+    width: 25px;
+    height: 25px;
+    color: red;
+    margin-right: 15.75px;
+  }
+}
+
+.user-header__actions--preview {
+  border: 1px solid $color-FA6A00;
+  width: 167px;
+  color: $color-FA6A00;
+  margin-right: 24px;
+  background-color: transparent;
+}
+
+.user-header__actions--add {
+  cursor: pointer;
+  border: none;
+  background-color: $color-FA6A00;
+  color: $color-FFFFFF;
+  width: 255px;
+  margin-right: 46px;
+}

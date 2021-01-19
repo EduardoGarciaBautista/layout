@@ -1,0 +1,36 @@
+<div class="users-list">
+    <app-filters (onFilterChange)="onFilterChange($event)"></app-filters>
+    <app-users-table
+            *ngIf="filters.viewType === VIEW_TYPE"
+            [userList]="userList"
+            [filters]="filters"
+            [rolList]="roleList"
+            (onDelete)="onDelete($event)"
+            (onChangeStatus)="onChangeStatus($event)"
+            (onEdit)="onEdit($event)">
+    </app-users-table>
+
+    <div class="users-list__card" *ngIf="filters.viewType !== VIEW_TYPE">
+        <app-user-card
+                *ngFor="let user of userList | filtersPipe: filters"
+                [user]="user" [roleList]="roleList"
+                (onChangeStatus)="onChangeStatus($event)"
+                (onDelete)="onDelete($event)"
+                (onEdit)="onEdit($event)">>
+        </app-user-card>
+    </div>
+    <app-modal [size]="SIZE_MODAL" *ngIf="showModal">
+        <app-user-form
+                [title]="'Agregar nuevo usuario'"
+                [roleList]="roleList"
+                [user]="userToEdit"
+                (onSave)="onSaveUser($event)"
+                (onClose)="onCloseModal()">
+
+        </app-user-form>
+    </app-modal>
+</div>
+
+<div class="user-list__paginator" *ngIf="filters.viewType === VIEW_TYPE && filters.page">
+    <app-paginator [pagesNumber]="pagesNumber" [actualPage]="actualPage" (onPageChange)="onPageChange($event)"></app-paginator>
+</div>

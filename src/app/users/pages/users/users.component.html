@@ -1,0 +1,11 @@
+<app-users-header (onCreate)="onCreate()" (onPreview)="onPreview()"></app-users-header>
+<app-modal [size]="SIZE_MODAL" *ngIf="showModal">
+    <app-user-form
+            [title]="'Agregar nuevo usuario'"
+            [roleList]="roleList"
+            (onSave)="onSaveUser($event)"
+            (onClose)="onCloseModal()">
+
+    </app-user-form>
+</app-modal>
+<app-users-list></app-users-list>

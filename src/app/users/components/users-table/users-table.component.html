@@ -1,0 +1,48 @@
+<div class="table-container" *ngIf="filters">
+    <table class="table-container__table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of userList | filtersPipe: filters; let i = index;" (click)="setSelected(i)"
+            [class.selected]="i ===
+        selected">
+            <td>
+                <img class="table-container__table--icon" src="./assets/icons/points.svg" alt="user icon">
+            </td>
+            <td>{{user.name}}</td>
+            <td>
+                <img class="table-container__table--user-icon" [src]="user.picture" alt="user profile">
+            </td>
+            <td>{{user.fathersLastName}}</td>
+            <td>{{user.mothersLastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.roleId | role: rolList}}</td>
+            <td>
+                <app-switch
+                        [isActive]="user.active"
+                        (active)="changeStatus($event, user.email)"
+                        [class.disabled]="selected !== i">
+
+                </app-switch>
+            </td>
+            <td>
+                <div class="actions" *ngIf="selected === i">
+                    <img class="actions--edit" src="./assets/icons/square.svg" alt="Edit icon" (click)="edit(user)">
+                    <img class="actions--trash" src="./assets/icons/trash.svg" alt="trash icon" (click)="delete(user.email)">
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

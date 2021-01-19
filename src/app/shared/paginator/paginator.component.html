@@ -1,0 +1,11 @@
+<div class="paginator" *ngIf="pages.length">
+    <button class="paginator__before" (click)="preview($event)">
+        Anterior
+    </button>
+    <div class="paginator__pages" [class.actual__page]="i !== (actualPage -1)" *ngFor="let page of pages; let i = index">
+        {{page + 1}}
+    </div>
+    <button class="paginator__after" (click)="next($event)">
+        Siguiente
+    </button>
+</div>
